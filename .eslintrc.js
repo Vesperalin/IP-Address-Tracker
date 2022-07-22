@@ -12,6 +12,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:jest/recommended',
     'plugin:testing-library/react',
+    'plugin:react/jsx-runtime',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -24,6 +25,7 @@ module.exports = {
   plugins: [
     '@typescript-eslint',
     'import', // eslint-plugin-import plugin. https://www.npmjs.com/package/eslint-plugin-import
+    'react',
   ],
   root: true, // For configuration cascading.
   ignorePatterns: ['build'],
@@ -37,6 +39,9 @@ module.exports = {
     semi: ['error', 'always'],
     'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0, maxEOF: 0 }],
     'no-multi-spaces': 'error',
+    'object-curly-spacing': ['error', 'always'],
+    'key-spacing': ['error', { beforeColon: false }],
+    'react/jsx-uses-react': 'error',
     'import/order': [
       'error',
       {
@@ -49,7 +54,6 @@ module.exports = {
         pathGroups: [
           { pattern: 'components/**', group: 'internal' },
           { pattern: 'pages/**', group: 'internal' },
-          { pattern: 'assets/**', group: 'internal' },
           { pattern: 'features/**', group: 'internal' },
           { pattern: 'models/**', group: 'internal' },
           { pattern: 'assets/**', group: 'internal' },
