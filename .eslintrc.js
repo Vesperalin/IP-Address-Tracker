@@ -37,6 +37,8 @@ module.exports = {
     semi: ['error', 'always'],
     'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0, maxEOF: 0 }],
     'no-multi-spaces': 'error',
+    'object-curly-spacing': ['error', 'always'],
+    'key-spacing': ['error', { beforeColon: false }],
     'import/order': [
       'error',
       {
@@ -49,7 +51,6 @@ module.exports = {
         pathGroups: [
           { pattern: 'components/**', group: 'internal' },
           { pattern: 'pages/**', group: 'internal' },
-          { pattern: 'assets/**', group: 'internal' },
           { pattern: 'features/**', group: 'internal' },
           { pattern: 'models/**', group: 'internal' },
           { pattern: 'assets/**', group: 'internal' },
