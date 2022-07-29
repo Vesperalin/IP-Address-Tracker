@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Container } from 'components/Header/Header.styled';
+import { Container, Title } from 'components/Header/Header.styled';
+import { Input } from 'components/Input';
 
 const Header = () => {
-  return <Container />;
+  const [address, setAddress] = useState<string>('');
+
+  const handleAddressChange = (input: string) => {
+    setAddress(input);
+  };
+
+  return (
+    <Container>
+      <Title>IP Address Tracker</Title>
+      <Input address={address} changeAddress={handleAddressChange}/>
+    </Container>
+  );
 };
 
 export { Header };
