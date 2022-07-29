@@ -17,7 +17,7 @@ const Title = styled.h1`
   font-size: 25px;
   margin-top: 25px;
 
-  @media screen and (min-width: ${({ theme }) => theme.size.desktop }) {
+  @media screen and (min-width: ${({ theme }) => theme.size.tablet }) {
     & {
       font-size: 30px;
     }

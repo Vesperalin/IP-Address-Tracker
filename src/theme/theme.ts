@@ -1,6 +1,7 @@
 const theme = {
   size: {
     mobile: '375px',
+    tablet: '768px',
     desktop: '1440px',
   },
   color: {
