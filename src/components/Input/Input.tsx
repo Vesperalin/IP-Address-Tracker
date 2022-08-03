@@ -6,9 +6,10 @@ import { InputWrapper, InputField, Button } from './Input.styled';
 interface Props {
   value: string;
   changeValue: (input: string) => void;
+  onButtonClick: () => void;
 }
 
-const Input = ({ value, changeValue }: Props) => {
+const Input = ({ value, changeValue, onButtonClick }: Props) => {
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
     changeValue(event.target.value.trim());
   };
@@ -16,7 +17,7 @@ const Input = ({ value, changeValue }: Props) => {
   return (
     <InputWrapper margin='20px 0'>
       <InputField type='text' placeholder='Search for any IP address or domain' value={value} onChange={onChange} />
-      <Button><img src={arrowLogo} alt='arrow'/></Button>
+      <Button onClick={onButtonClick}><img src={arrowLogo} alt='arrow'/></Button>
     </InputWrapper>
   );
 };
