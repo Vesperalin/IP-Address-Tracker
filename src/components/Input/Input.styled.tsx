@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
 
-import { MarginProps } from './Input';
+interface MarginProps {
+  margin?: string;
+}
 
 const InputWrapper = styled.div<MarginProps>`
   display: flex;
@@ -46,6 +48,11 @@ const Button = styled.button`
   justify-content: center;
   align-content: center;
   background-color: #1b1b1b;
+
+  &:focus, &:hover {
+    background-color: #2f2f2f;
+    cursor: pointer;
+  }
 `;
 
 export { InputWrapper, InputField, Button };
