@@ -57,6 +57,7 @@ module.exports = {
           { pattern: 'features/**', group: 'internal' },
           { pattern: 'models/**', group: 'internal' },
           { pattern: 'assets/**', group: 'internal' },
+          { pattern: 'context/**', group: 'internal' },
         ],
       },
     ],
