@@ -7,6 +7,7 @@ interface Props {
 
 const MapData = ({ latitude, longitude }: Props) => {
   const map = useMap();
+  
   if (latitude !== undefined && longitude !== undefined) {
     map.setView([latitude, longitude]);
   }

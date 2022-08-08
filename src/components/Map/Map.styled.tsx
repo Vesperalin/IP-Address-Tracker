@@ -1,4 +1,5 @@
 import { MapContainer } from 'react-leaflet';
+import Loader from 'react-ts-loaders';
 import styled from 'styled-components';
 
 const MapWrapper = styled.main`
@@ -14,4 +15,8 @@ const StyledMapContainer = styled(MapContainer)`
   height: calc(100vh - 250px);
 `;
 
-export { StyledMapContainer, MapWrapper };
+const LoaderWrapper = styled(Loader)`
+  margin-top: 100px;
+`;
+
+export { StyledMapContainer, MapWrapper , LoaderWrapper };

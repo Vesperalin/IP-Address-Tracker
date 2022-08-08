@@ -2,11 +2,15 @@ import Ipify from 'api/services/Ipify';
 import { RootState } from 'context';
 import { TileLayer } from 'react-leaflet';
 import { useSelector } from 'react-redux';
-import { MapData } from 'components/Map/components';
-import { StyledMapContainer, MapWrapper } from './Map.styled';
+import { MapData } from 'components/Map/components/MapData';
+import { StyledMapContainer, MapWrapper, LoaderWrapper } from './Map.styled';
 
 const Map = () => {
-  const { data } = Ipify.useAddress(useSelector((state: RootState) => state.input.address));
+  const { data, isLoading } = Ipify.useAddress(useSelector((state: RootState) => state.input.address));
+
+  if(isLoading) {
+    return <LoaderWrapper type="ring" color="#5b32b4" size={280} />;
+  }
 
   return (
     <MapWrapper>
