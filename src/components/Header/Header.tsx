@@ -1,4 +1,4 @@
-import OwnIP from 'api/services/OwnIP';
+import OwnIP from 'api/services/Weather';
 import { RootState } from 'context';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -14,7 +14,7 @@ const Header = () => {
   useEffect(() => {
     refetch();
     if(data !== undefined) {
-      dispatch(changeAddress(data.IPv4));
+      dispatch(changeAddress(data.ip));
     }
     dispatch(handleChoice());
   }, [data, dispatch, refetch]);
