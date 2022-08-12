@@ -38,6 +38,19 @@ const DataContainer = styled.div`
   margin-left: auto; 
   margin-right: auto;
   transform: translateY(-50%);
+
+  @media screen and (min-width: ${({ theme }) => theme.size.tablet }) {
+    & {
+      flex-direction: row;
+      min-width: 900px;
+      min-height: 120px;
+      height: 120px;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 20px 0;
+      text-align: left;
+    }
+  }
 `;
 
 const Title = styled.p`
@@ -45,17 +58,43 @@ const Title = styled.p`
   font-weight: ${({ theme }) => theme.font.weight.medium};
   color: ${({ theme }) => theme.color.darkGrey};
   font-size: ${({ theme }) => theme.font.size.title};
+
+  @media screen and (min-width: ${({ theme }) => theme.size.tablet }) {
+    & {
+      margin-bottom: 5px;
+    }
+  }
+`;
+
+const Separator = styled.div`
+  display: none;
+
+  @media screen and (min-width: ${({ theme }) => theme.size.tablet }) {
+    & {
+      display: block;
+      width: 1px;
+      border: 1px solid #adadad53;
+      height: 100%;
+    }
+  }
 `;
 
 const Value = styled.p`
   font-weight: ${({ theme }) => theme.font.weight.medium};
   font-size: ${({ theme }) => theme.font.size.value};
   color: ${({ theme }) => theme.color.veryDarkGray};
+  text-overflow: ellipsis;
 `;
 
 const DataCell = styled.div`
   width: 250px;
   margin: 5px 0;
+
+  @media screen and (min-width: ${({ theme }) => theme.size.tablet }) {
+    & {
+      padding: 0 25px;
+    }
+  }
 `;
 
-export { StyledMapContainer, MapWrapper , LoaderWrapper, DataContainer, Title, Value, DataCell };
+export { StyledMapContainer, MapWrapper , LoaderWrapper, DataContainer, Title, Value, DataCell, Separator };

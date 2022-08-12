@@ -5,7 +5,7 @@ import { TileLayer, Marker } from 'react-leaflet';
 import { useSelector } from 'react-redux';
 import locationIcon from 'assets/images/icon-location.svg';
 import { MapData } from 'components/Map/components/MapData';
-import { StyledMapContainer, MapWrapper, LoaderWrapper, DataContainer, Title, Value, DataCell } from './Map.styled';
+import { StyledMapContainer, MapWrapper, LoaderWrapper, DataContainer, Title, Value, DataCell, Separator } from './Map.styled';
 
 const Map = () => {
   const { data, isLoading } = Ipify.useAddress(useSelector((state: RootState) => state.input.address));
@@ -26,20 +26,26 @@ const Map = () => {
             <Title>ip address</Title>
             <Value>{data.ip}</Value>
           </DataCell>
+          <Separator />
+
           <DataCell>
             <Title>location</Title>
             <Value>{data.location.city}{data && ', ' + data.location.region}</Value>
           </DataCell>
+          <Separator />
+
           <DataCell>
             <Title>timezone</Title>
             <Value>{data.location.timezone}</Value>
           </DataCell>
+          <Separator />
+          
           <DataCell>
             <Title>isp</Title>
             <Value>{data.isp}</Value>
           </DataCell>
         </DataContainer>
-        <StyledMapContainer center={[51.111, 17.036]} zoom={12} zoomControl={false} scrollWheelZoom={true}>
+        <StyledMapContainer center={[data.location.lat, data.location.lng]} zoom={12} zoomControl={false} scrollWheelZoom={true}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
