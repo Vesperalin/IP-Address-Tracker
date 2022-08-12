@@ -47,8 +47,8 @@ const DataContainer = styled.div`
       height: 140px;
       align-items: flex-start;
       justify-content: space-between;
-      padding: 20px 0;
       text-align: left;
+      padding: 20px 0;
     }
   }
 `;
