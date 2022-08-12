@@ -12,6 +12,8 @@ const theme = {
   font: {
     size: {
       input: '18px',
+      title: '10px',
+      value: '18px',
     },
     weight: {
       regular: '400',

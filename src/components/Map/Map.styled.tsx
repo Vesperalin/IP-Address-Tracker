@@ -3,6 +3,8 @@ import Loader from 'react-ts-loaders';
 import styled from 'styled-components';
 
 const MapWrapper = styled.main`
+  position: relative;
+
   .leaflet-control-container {
     .leaflet-bottom.leaflet-right {
       visibility: hidden;
@@ -19,4 +21,41 @@ const LoaderWrapper = styled(Loader)`
   margin-top: 100px;
 `;
 
-export { StyledMapContainer, MapWrapper , LoaderWrapper };
+const DataContainer = styled.div`
+  background-color: white;
+  width: 320px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  z-index: 500;
+  text-align: center;
+  padding: 15px 0;
+  border-radius: 20px;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto;
+  transform: translateY(-50%);
+`;
+
+const Title = styled.p`
+  text-transform: uppercase;
+  font-weight: ${({ theme }) => theme.font.weight.medium};
+  color: ${({ theme }) => theme.color.darkGrey};
+  font-size: ${({ theme }) => theme.font.size.title};
+`;
+
+const Value = styled.p`
+  font-weight: ${({ theme }) => theme.font.weight.medium};
+  font-size: ${({ theme }) => theme.font.size.value};
+  color: ${({ theme }) => theme.color.veryDarkGray};
+`;
+
+const DataCell = styled.div`
+  width: 250px;
+  margin: 5px 0;
+`;
+
+export { StyledMapContainer, MapWrapper , LoaderWrapper, DataContainer, Title, Value, DataCell };
