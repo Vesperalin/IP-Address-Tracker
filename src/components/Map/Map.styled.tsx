@@ -43,8 +43,8 @@ const DataContainer = styled.div`
     & {
       flex-direction: row;
       min-width: 900px;
-      min-height: 120px;
-      height: 120px;
+      min-height: 140px;
+      height: 140px;
       align-items: flex-start;
       justify-content: space-between;
       padding: 20px 0;
