@@ -27,6 +27,7 @@ const InputField = styled.input`
   padding: 10px 5px 10px 15px;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
+  font-size: ${({ theme }) => theme.font.size.input};
 
   &:focus, &:active { 
     outline: none; 
@@ -35,7 +36,7 @@ const InputField = styled.input`
   ::placeholder,
   ::-webkit-input-placeholder {
     color: ${({ theme }) => theme.color.darkGrey};
-    font-size: ${({ theme }) => theme.font.size.regular};
+    font-size: ${({ theme }) => theme.font.size.input};
   }
 `;
 

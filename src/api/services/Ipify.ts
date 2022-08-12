@@ -12,6 +12,7 @@ export default {
       return response.data;
     }, {
       enabled: address !== '',
+      refetchOnWindowFocus: false
     });
     return queryData;
   }

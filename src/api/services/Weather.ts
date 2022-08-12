@@ -14,6 +14,7 @@ export default {
       return response.data;
     }, {
       enabled: false,
+      refetchOnWindowFocus: false
     });
     return queryData;
   }

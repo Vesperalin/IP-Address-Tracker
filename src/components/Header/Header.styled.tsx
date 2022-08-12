@@ -4,7 +4,7 @@ import backgroundImage from 'assets/images/pattern-bg.png';
 
 const Container = styled.header`
   width: 100%;
-  height: 250px;
+  height: 300px;
   display: flex; flex-direction: column;
   align-items: center;
   background: -moz-linear-gradient(45deg, rgba(25,110,179,0.3) 30%, rgba(255,255,255,0.3) 100%), url(${backgroundImage});
